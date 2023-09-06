@@ -24,10 +24,16 @@ class PlacesList extends StatelessWidget {
     return ListView.builder(
         itemCount: places.length,
         itemBuilder: (ctx, index) => ListTile(
+              leading: CircleAvatar(
+                radius: 26,
+                backgroundImage: FileImage(places[index].image),
+              ),
               onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (ctx) =>
-                  PlacesDetailScreen(place: places[index])
-                ),);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (ctx) =>
+                          PlacesDetailScreen(place: places[index])),
+                );
               },
               title: Text(places[index].title,
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(
