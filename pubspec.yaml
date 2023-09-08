@@ -27,6 +27,9 @@ environment:
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
+assets:
+  - .env
+
 dependencies:
   flutter:
     sdk: flutter
@@ -39,7 +42,17 @@ dependencies:
   uuid: ^4.0.0
   flutter_riverpod: ^2.4.0
   image_picker: ^1.0.4
-  location: ^5.0.3
+  location:
+    git:
+      url: git@github.com:asaarnak/flutterlocation.git
+      ref: patch-1
+      path: packages/location
+  http: ^1.1.0
+  flutter_dotenv: ^5.1.0
+  google_maps_flutter: ^2.5.0
+  path_provider: ^2.1.1
+  path: ^1.8.3
+  sqflite: ^2.3.0
 
 dev_dependencies:
   flutter_test:
